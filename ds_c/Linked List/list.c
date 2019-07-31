@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+// This can be used to store only 'int' DataType
 //append(), insert(), display()
-
-
+// Compile this file using gcc.exe (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0
 // compile using  gcc -o list.exe list.c
 // for run this file use ./a.exe
+// Implementation is based on Python list Data structure.
+
 
 // A linked list node 
 struct Node 
@@ -14,22 +16,24 @@ int data;
 struct Node *next; 
 }; 
 
+
 // This is head and tail of list name as LinkedList
 struct LinkedList{
     struct Node *head;
     struct Node *tail;
 };
 
+
 // Shortend the names of structures
 typedef struct Node Node;
 typedef struct LinkedList LinkedList;
+
 
 // This fuction is used for free the allocated memory
 void free_linked_list(Node* node) {
     while (node) {
         Node* temp = node;
         node = node->next;
-
         free(temp);
     }
 }
